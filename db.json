@@ -1,0 +1,39 @@
+{
+  "products": [
+    {
+      "id": "1",
+      "img": "https://dkstatics-public.digikala.com/digikala-products/0bcdc926ed0054b7c2f165681edfb50a675cb97d_1636195761.jpg?x-oss-process=image/resize,m_lfit,h_800,w_800/format,webp/quality,q_90",
+      "title": "هدفون بلوتوثی بیتس مدل Fit Pro دو گوشی، با رابط بلوتوث، مناسب برای کاربری عمومی",
+      "price": "۹,۱۳۴,۵۵۰",
+      "desc": "بیتس جزو بزرگ‌ترین و معتبرترین برندهای صنعت هدفون و هدست در جهان است. محصولات این برند به کیفیت بالا در دنیا شناخته می‌شوند. این کمپانی همواره در محصولات خود از بروزترین تکنولوژی‌ها بهره می‌برد. "
+    },
+    {
+      "id": "2",
+      "img": "https://dkstatics-public.digikala.com/digikala-products/4528651.jpg?x-oss-process=image/resize,m_lfit,h_800,w_800/format,webp/quality,q_90",
+      "title": "هدفون بی سیم بیتس مدل Studio 3 – The Beats Skyline Collection",
+      "price": "۱۲,۵۰۰,۰۰۰",
+      "desc": "مجهز به چیپست W۱ اپل فناوری Fast Fuel برای شارژ سریع ۳ ساعت پخش موسیقی با ۱۰ دقیقه شارژ با Fast Fuel امکان فعال یا غیر فعال کردن قابلیت Noise Cancelling (ANC) برای ذخیره باتری امکان کنترل موسیقی و تماس های دریافتی امکان تنظیم حجم صدا امکان شارژ از طریق پورت microUSB شارژدهی باتری ۴۰ ساعته در حالت ANC غیر فعال"
+    },
+    {
+      "id": "3",
+      "img": "https://dkstatics-public.digikala.com/digikala-products/3e142561f275fb653a320e9e534de2f710362b3b_1692111953.jpg?x-oss-process=image/resize,m_lfit,h_300,w_300/format,webp/quality,q_80",
+      "title": "دسته بازی گیمسر مدل T4 Kaleid",
+      "price": "۲,۸۸۶,۴۰۰",
+      "desc": "بعد از دو ماه استفاده باید بگم که واقعا عالیه و خیلی مزایای خوبی داره و تنها ایراداتی که میتونم بگیرم سیمی بودن و صدای کلیکی دکمه هاشه که شبیه موس هستش"
+    },
+    {
+      "id": "4",
+      "img": "https://dkstatics-public.digikala.com/digikala-products/4505392f5c3321fb4784dac21b1d5d5cb6f7a1c3_1701674713.jpg?x-oss-process=image/resize,m_lfit,h_800,w_800/format,webp/quality,q_90",
+      "title": "کنسول بازی سونی مدل PlayStation 5 Slim Digital Edition ظرفیت یک ترابایت به همراه دسته اضافه",
+      "price": "۳۳,۸۱۷,۵۶۰",
+      "desc": "HDMI با پشتیبانی از وضوح ۴K با نرخ فریم حداکثری ۱۲۰ هرتز و ۸K با نرخ فریم ۶۰ و قابلیت HDR"
+    },
+    {
+      "id": "5",
+      "img": "https://dkstatics-public.digikala.com/digikala-products/8ff3f29e8a69f493404a1b08568a1860c9f20cdf_1690204135.jpg?x-oss-process=image/resize,m_lfit,h_800,w_800/format,webp/quality,q_90",
+      "title": "کنسول بازی سونی مدل Playstation 4 Slim کد Region 2 CUH-2200A ظرفیت 500 گیگابایت به همراه دسته اضافه",
+      "price": "۲۰,۹۱۰,۰۰۰",
+      "desc": "پردازنده ۸ هسته‌ای AMD‌ با‌ هسته‌های سفارشی Jaguar و فرکانس ۱.۶ گیگاهرتز"
+    }
+  ]
+}
