@@ -8,7 +8,7 @@ function Navbar() {
       <Container>
         <div className="flex items-center justify-between shadow-xl rounded-md p-4 ">
           <h3 className="font-lale text-2xl">sabaShop</h3>
-          <ul className="font-vazir text-lg flex items-center gap-x-6">
+          <ul className="font-vazir font-semibold text-lg flex items-center gap-x-6">
             <li>
               <NavLink to="/">خانه </NavLink>
             </li>
