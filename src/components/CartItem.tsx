@@ -1,33 +1,58 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Button from "./Button";
+import { getProduct } from "@/utils";
+import { TPRODUCTS } from "@/Types/servicets";
+import { useShoppingCartContext } from "@/Context/AppContext";
+import { Link } from "react-router-dom";
+interface Icartitem {
+  id: number | string;
+  qty: number | string;
+}
 
-function CartItem() {
+function CartItem({ id, qty }: Icartitem) {
+  const { handleIncreaseProduct, handlerDecreaseProduct, deleteProductItem } =
+    useShoppingCartContext();
+  const [products, setProducts] = useState<TPRODUCTS>({});
+  useEffect(() => {
+    getProduct(id).then((result) => setProducts(result));
+  }, []);
   return (
     <>
       <div className="flex items-center gap-4 mb-4 mt-6 ">
-        <img
-          src="https://sabzlearn.ir/wp-content/uploads/2023/12/ezgif.com-jpg-to-webp-converted-4-1-768x432.webp"
-          alt=""
-          className=" rounded-md w-24"
-        />
-        <h1 className="text-sm md:text-xl lg:text-2xl font-vazir">
-          اموزش لینوکس با گرایش امنیت
+        <Link to={`/products/${id}`}>
+          <img src={products.img} alt="" className=" rounded-md w-24" />
+        </Link>
+        <h1 className="text-sm md:text-xl line-clamp-2 md:line-clamp-1 font-vazir">
+          {products.title}
         </h1>
         <div className="flex items-center justify-between gap-x-4">
           <Button
             color="secoundary"
             size="sm"
             rounded="sm"
-            className="font-vazir">
+            className="font-vazir"
+            onClick={() => {
+              handleIncreaseProduct(id);
+            }}>
             +
           </Button>
-          <span className="font-vazir font-semibold text-md">2</span>
-          <Button color="danger" size="sm" rounded="sm" className="font-vazir">
+          <span className="font-vazir font-semibold text-md">{qty}</span>
+          <Button
+            color="danger"
+            size="sm"
+            rounded="sm"
+            className="font-vazir"
+            onClick={() => {
+              handlerDecreaseProduct(id);
+            }}>
             -
           </Button>
           <Button
             size="sm"
             rounded="sm"
+            onClick={() => {
+              deleteProductItem(id);
+            }}
             className="font-vazir hover:bg-red-600 transition-all duration-150 hover:text-white">
             <svg
               xmlns="http://www.w3.org/2000/svg"

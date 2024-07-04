@@ -12,11 +12,9 @@ function Cart() {
     <>
       <Container>
         <div>
-          <CartItem />
-          <CartItem />
-          <CartItem />
-          <CartItem />
-          <CartItem />
+          {cartItems.map((item) => (
+            <CartItem {...item} />
+          ))}
         </div>
         <div className="w-full flex flex-col font-vazir gap-y-2 mt-16 bg-zinc-300 p-4 rounded-lg">
           <span className="font-bold text-blue-700">
