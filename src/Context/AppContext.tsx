@@ -12,6 +12,7 @@ type CARTSHOP = {
   handlerDecreaseProduct: (id: number | string) => void;
   getQtyNumber: (id: number | string) => number | string;
   deleteProductItem: (id: number | string) => void;
+  getTotalQty: number | string;
 };
 export type CartProduct = {
   id: number | string;
@@ -68,6 +69,11 @@ export function AppProvider({ children }: TChidren) {
       return currentProduct.filter((item) => item.id !== id);
     });
   };
+
+  const getTotalQty = cartItems.reduce(
+    (totalqty, item) => totalqty + item.qty,
+    0
+  );
   return (
     <AppContext.Provider
       value={{
@@ -76,6 +82,7 @@ export function AppProvider({ children }: TChidren) {
         handlerDecreaseProduct,
         getQtyNumber,
         deleteProductItem,
+        getTotalQty,
       }}>
       {children}
     </AppContext.Provider>
