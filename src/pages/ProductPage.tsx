@@ -7,10 +7,15 @@ import { TPRODUCTS } from "@/Types/servicets";
 import { useShoppingCartContext } from "@/Context/AppContext";
 
 function ProductPage() {
-  const { handleIncreaseProduct, cartItems } = useShoppingCartContext();
-  console.log(cartItems);
-
   const [productData, setProductData] = useState<TPRODUCTS>([]);
+
+  const {
+    handleIncreaseProduct,
+    handlerDecreaseProduct,
+    getQtyNumber,
+    cartItems,
+  } = useShoppingCartContext();
+
   const param = useParams<{ id: string }>();
 
   useEffect(() => {
@@ -28,16 +33,46 @@ function ProductPage() {
                 <span>{productData.price}</span>
                 <span className="text-lg font-semibold">تومان</span>
               </span>
-              <Button
-                size="lg"
-                rounded="md"
-                color="secoundary"
-                className="font-vazir"
-                onClick={() => {
-                  handleIncreaseProduct(param.id);
-                }}>
-                افزودن به سبد خرید
-              </Button>
+              <div className="mt-3">
+                {getQtyNumber(param.id) === 0 ? (
+                  <Button
+                    size="lg"
+                    rounded="md"
+                    color="secoundary"
+                    className="font-vazir"
+                    onClick={() => {
+                      handleIncreaseProduct(param.id);
+                    }}>
+                    افزودن به سبد خرید
+                  </Button>
+                ) : (
+                  <div className="flex items-center justify-between gap-x-4 ">
+                    <Button
+                      size="lg"
+                      rounded="sm"
+                      color="primary"
+                      className="font-vazir"
+                      onClick={() => {
+                        handleIncreaseProduct(param.id);
+                      }}>
+                      +
+                    </Button>
+                    <span className="font-vazir font-bold text-xl">
+                      {getQtyNumber(param.id)}
+                    </span>
+                    <Button
+                      size="lg"
+                      rounded="sm"
+                      color="danger"
+                      className="font-vazir"
+                      onClick={() => {
+                        handlerDecreaseProduct(param.id);
+                      }}>
+                      -
+                    </Button>
+                  </div>
+                )}
+              </div>
             </div>
           </div>
 

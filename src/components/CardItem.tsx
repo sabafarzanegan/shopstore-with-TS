@@ -22,12 +22,17 @@ export function CardItem({
   ...props
 }: CardProps & TCardItem) {
   return (
-    <Card className={cn("w-[380px] h-[600px]", className)} {...props}>
+    <Card
+      className={cn(
+        "w-[380px] h-[600px] flex flex-col item-center justify-between",
+        className
+      )}
+      {...props}>
       <CardHeader className="">
         <img src={img} alt="" className="rounded-md " />
         <CardTitle className="font-vazir mt-3 text-sm">{title}</CardTitle>
       </CardHeader>
-      <CardContent>
+      <CardContent className="">
         <p className="text-gray-400 font-vazir text-md line-clamp-2">{desc}</p>
         <span className="font-vazir text-md flex items-center  gap-x-2 mt-2">
           <span>{price}</span>
