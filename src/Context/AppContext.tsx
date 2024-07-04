@@ -11,6 +11,7 @@ type CARTSHOP = {
   handleIncreaseProduct: (id: number | string) => void;
   handlerDecreaseProduct: (id: number | string) => void;
   getQtyNumber: (id: number | string) => number | string;
+  deleteProductItem: (id: number | string) => void;
 };
 export type CartProduct = {
   id: number | string;
@@ -61,6 +62,12 @@ export function AppProvider({ children }: TChidren) {
   const getQtyNumber = (id: number | string) => {
     return cartItems.find((item) => item.id == id)?.qty || 0;
   };
+
+  const deleteProductItem = (id: string | number) => {
+    setCartItems((currentProduct) => {
+      return currentProduct.filter((item) => item.id !== id);
+    });
+  };
   return (
     <AppContext.Provider
       value={{
@@ -68,6 +75,7 @@ export function AppProvider({ children }: TChidren) {
         handleIncreaseProduct,
         handlerDecreaseProduct,
         getQtyNumber,
+        deleteProductItem,
       }}>
       {children}
     </AppContext.Provider>
