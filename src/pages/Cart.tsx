@@ -1,9 +1,13 @@
+import { AppContext } from "@/Context/AppContext";
 import Button from "@/components/Button";
 import CartItem from "@/components/CartItem";
 import Container from "@/components/Container";
 import React from "react";
+import { useShoppingCartContext } from "../Context/AppContext";
 
 function Cart() {
+  const { cartItems } = useShoppingCartContext();
+
   return (
     <>
       <Container>

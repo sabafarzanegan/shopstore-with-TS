@@ -37,7 +37,7 @@ function ProductPage() {
           <img
             src={productData.img}
             alt=""
-            className="w-full mb-4 md:w-[60%] h-[60%] rounded-lg"
+            className="w-full  mb-4 md:w-96 md:h-96 rounded-lg"
           />
         </div>
       </Container>
