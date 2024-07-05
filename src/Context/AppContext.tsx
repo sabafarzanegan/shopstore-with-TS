@@ -16,7 +16,7 @@ type CARTSHOP = {
 };
 export type CartProduct = {
   id: number | string;
-  qty: number;
+  qty: number | string;
 };
 
 export const useShoppingCartContext = () => {
@@ -47,7 +47,7 @@ export function AppProvider({ children }: TChidren) {
     setCartItems((currentProduct) => {
       let selectedItem = currentProduct.find((item) => item.id === id);
       if (selectedItem.qty === 1) {
-        return currentProduct.filter((item) => item.id !== id);
+        return currentProduct.filter((item) => item.id != id);
       } else {
         return currentProduct.map((item) => {
           if (item.id == id) {
@@ -65,9 +65,9 @@ export function AppProvider({ children }: TChidren) {
   };
 
   const deleteProductItem = (id: string | number) => {
-    setCartItems((currentProduct) => {
-      return currentProduct.filter((item) => item.id !== id);
-    });
+    setCartItems((currentProduct) =>
+      currentProduct.filter((item) => item.id != id)
+    );
   };
 
   const getTotalQty = cartItems.reduce(
